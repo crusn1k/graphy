@@ -21,7 +21,11 @@ $(document).ready(function() {
             x: 'x',
             xFormat: '%H:%M:%S',
             columns: dat.d,
-             type: 'spline'
+            type: 'spline',
+            colors: {
+                '% failed': 'rgb(214, 39, 40)',
+                '% completed': 'rgb(44, 160, 44)'
+            },
         },        
         axis: {
             x: {
@@ -51,7 +55,7 @@ $(document).ready(function() {
             onmouseout: function (d, i) {}
         },
         donut: {
-            title: "Progress"
+            title: "Close Curve status"
         }
     });
     var interval = setInterval(function(){                
