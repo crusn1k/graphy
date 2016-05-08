@@ -1,6 +1,6 @@
 var express = require('express');
+var getCompletedPercent = require("../controllers/progress_controller");
 var router = express.Router();
-var percentCompleted = 0;
 /* GET home page. */
 var ips = new Set();
 router.get('/', function(req, res, next) {
@@ -21,10 +21,7 @@ router.get('/progress', function(req, res, next) {
 });
 
 router.get('/get-percent-completed', function(req, res, next) {
-    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    ips.add(ip);
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ percentCompleted: ++percentCompleted }));
+    getCompletedPercent(req, res, next);
 });
 
 module.exports = router;
