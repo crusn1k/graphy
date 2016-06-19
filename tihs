@@ -1,0 +1,4 @@
+private static final Pattern TBA_PATTERN = Pattern.compile("^(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC|SPOT)? *(TBA) *([A-Z]+\\d(.\\d)?)$");
+private static final Pattern GOVT_PATTERN = Pattern.compile("(GOVT) *(\\d+YR)");
+private static final Pattern ISIN_PATTERN = Pattern.compile("(ISIN) *([A-Z0-9]+)");
+private static final Pattern CURVE_PATTERN = Pattern.compile("(AVSWP)");
